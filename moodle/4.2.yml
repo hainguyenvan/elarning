@@ -11,7 +11,7 @@ services:
       - MOODLE_DATABASE_USER=moodleadmin
       - MOODLE_DATABASE_NAME=moodle
       - MOODLE_DATABASE_PASSWORD=moodleadmin
-      - ALLOW_EMPTY_PASSWORD=yes
+      # - ALLOW_EMPTY_PASSWORD=yes
     volumes:
       - 'moodle_data:/bitnami/moodle'
       - 'moodledata_data:/bitnami/moodledata'
