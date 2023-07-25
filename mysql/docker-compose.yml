@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+
+  # mysql
+  mysql:
+    image: mysql:5.7.21
+    volumes_from:
+      - mysql-data
+    ports:
+      - "8806:3306"
+    container_name: "mysqlapp-hainv"
+    environment:
+      MYSQL_ROOT_PASSWORD: m1tkh!u1234
+ 
+  # mysql data
+  mysql-data:
+    image: mysql:5.7.21
+    container_name: "mysqldata-hainv"
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+    command: "true"
+  
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: "phpmyadmin-hainv"
+    ports:
+      - 8084:80
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
