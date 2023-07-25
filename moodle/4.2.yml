@@ -6,11 +6,13 @@ services:
       - '8080:8080'
       # - '8443:8443'
     environment:
-      - MOODLE_DATABASE_HOST=103.28.37.119
-      - MOODLE_DATABASE_PORT_NUMBER=8806
-      - MOODLE_DATABASE_USER=moodleadmin
-      - MOODLE_DATABASE_NAME=moodle
-      - MOODLE_DATABASE_PASSWORD=moodleadmin
+      - MOODLE_DB_HOST=103.28.37.119
+      - MOODLE_DB_PORT=8806
+      - MOODLE_DB_NAME=moodle
+      - MOODLE_DB_USER=moodle
+      - MOODLE_DB_PASSWORD=password
+      # - MOODLE_WWW_ROOT: ${MOODLE_WWW_ROOT:-http://localhost:8080}
+      # - MOODLE_DATA_ROOT: /var/www/moodledata
       # - ALLOW_EMPTY_PASSWORD=yes
     # volumes:
     #   - 'moodle_data:/bitnami/moodle'
